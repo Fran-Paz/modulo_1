@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Northside Youth Soccer League</title>
+        <link rel="stylesheet" href="nysl.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,700;1,100&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+            integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="icon" href="img/ball.png" type="ico" sizes="16x16">
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+
+        <!-- SCRIPT -->
+
+        <script type="text/javascript">
+            var maps = [
+                ['AJ Katzenmaier',
+                    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2949.781070817101!2d-87.86499018455577!3d42.32586807918913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880f932fbc6ba7cd%3A0xcf2bbe275c6da815!2sKatzenmaier%20School!5e0!3m2!1ses-419!2scl!4v1608248264684!5m2!1ses-419!2scl'
+                ],
+                ['Greenbay',
+                    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.0229816865967!2d-87.64002218456883!3d41.913864679219316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd3407260c45b%3A0xb351205fae50c6f3!2sGreenbay%20Elementary!5e0!3m2!1ses-419!2scl!4v1608248715394!5m2!1ses-419!2scl'
+                ],
+                ['Howard A Yeager',
+                    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.585850578735!2d-87.66511018456853!3d41.92326097921862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd2e37f852467%3A0xb6cb22b2f0358874!2sHoward%20A%20Yeager%20Elementary!5e0!3m2!1ses-419!2scl!4v1608248940666!5m2!1ses-419!2scl'
+                ],
+                ['Marjorie P Hart',
+                    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.2898393489745!2d-87.6481613845683!3d41.9296228792181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd30f2637f9d7%3A0xdbff5d5dfcfcfa35!2sMarjorie%20P%20Hart%20Elementary!5e0!3m2!1ses-419!2scl!4v1608249040321!5m2!1ses-419!2scl'
+                ],
+                ['North',
+                    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2949.925413695556!2d-87.85866038455586!3d42.32278957918945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880f9397ee66b045%3A0x1bcfc64c67276b7!2sNorth%20Chicago%20School%20District!5e0!3m2!1ses-419!2scl!4v1608249410819!5m2!1ses-419!2scl'
+                ],
+                ['South',
+                    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.946807886314!2d-87.65920478457012!3d41.8724908792226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2ce1c0c3b4f7%3A0xc21d345b2db9d1b!2sChicago%20School%20Of%20Grappling!5e0!3m2!1ses-419!2scl!4v1608249453670!5m2!1ses-419!2scl'
+                ],
+
+            ];
+
+            function doc(id) {
+                return document.getElementById(id);
+            }
+
+            function showMap(n) {
+                doc('citymap').innerHTML =
+                    '<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="' +
+                    maps[n][1] + '"></iframe>';
+                doc('cityname').innerHTML = '<h2>' + maps[n][0] + '</h2>';
+                document.title = maps[n][0];
+            }
+            window.onload = function () {
+                doc('loc').onchange = function () {
+                    this.blur();
+                    var val = new Number(this.options[this.selectedIndex].value) || false;
+                    if (val) {
+                        showMap(val);
+                    }
+                }
+            }
+
+        </script>
+        <!-- END SCRIPT -->
+
+    </head>
+
+    <body>
+
+        <h1 id="title"><i class="fas fa-futbol"></i> Northside Youth Soccer League <i class="fas fa-futbol"></i>
+        </h1>
+        <div class="bg-img">
+            <div class="container">
+                <div class="topnav">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About NYSL</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="#">Schedule</a>
+                    <a href="rules.html">Rules</a>
+                    <a href="register.html">Register</a>
+                </div>
+            </div>
+        </div>
+
+        <h1 class="main_title"> NYSL Game Information</h1>
+
+        <div class="container_game_info">
+            <h2 class="sub_game">Fall Schedule</h2>
+            <h3 class="subtitle_game">* All games take place on Saturday.</h3>
+
+            <!-- TABLE -->
+            <div class="table_container">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>SEPTEMBER</th>
+                            <th>Teams</th>
+                            <th>Location</th>
+                            <th>Times</th>
+                        </tr>
+                        <tr>
+                            <td>9/01</td>
+                            <td>U1 and U4 </br>
+                                U3 and U2</td>
+                            <td>AJ Katzenmaier </br>
+                                Greenbay</td>
+                            <td>9:30 a.m.
+                                1:00 p.m.</td>
+                        </tr>
+                        <tr>
+                            <td>9/08</td>
+                            <td>U5 and U6</br>
+                                U6 and U1</td>
+                            <td>Howard A Yeager </br>
+                                Marjorie P Hart</td>
+                            <td>9:30 a.m.
+                                1:00 p.m.</td>
+                        </tr>
+                        <tr>
+                            <td>9/15</td>
+                            <td>U2 and U4</br>
+                                U3 and U5</td>
+                            <td>North</br>
+                                AJ Katzenmaier</td>
+                            <td>9:30 a.m.
+                                1:00 p.m.</td>
+                        </tr>
+                        <tr>
+                            <td>9/22</td>
+                            <td>U1 and U3 </br>
+                                U2 and U6</td>
+                            <td>South</br>
+                                Howard A Yeager</td>
+                            <td>9:30 a.m.
+                                1:00 p.m.</td>
+                        </tr>
+                        <tr>
+                            <td>9/29</td>
+                            <td>U4 and U5</td>
+                            <td>Greenbay</td>
+                            <td>9:30 a.m.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- END TABLE -->
+
+            <p><span> Facility Type:</span> Outdoor</p>
+
+            <p><span> Additional Information:</span> If deemed necessary by NYSL, games may be shortened or cancelled
+                due to
+                extreme
+                weather conditions.</p>
+            <p><span>Please direct all questions to:</span> Michael Randall, League Coordinator.</p>
+
+            <span>Phone:</span>(630) 690-8132
+
+            <span class="email_info">
+                <span>Email:</span><a href="mailto:michael.randall@chisoccer.org">
+                    michael.randall@chisoccer.org</a></span>
+        </div>
+
+
+        <div class="container_map">
+            <h3>Select the school to see the location</h3>
+
+            <select id="loc">
+                <option>Select location:</option>
+                <option value="0">AJ Katzenmaier</option>
+                <option value="1">Greenbay</option>
+                <option value="2">Howard A Yeager</option>
+                <option value="3">Marjorie P Hart</option>
+                <option value="4">North</option>
+                <option value="5">South</option>
+            </select>
+            <br /><br /><br />
+            <div id="cityname"></div>
+            <br /><br /><br />
+            <div id="citymap"></div>
+        </div>
+
+    </body>
+
+</html>
